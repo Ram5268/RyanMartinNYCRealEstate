@@ -115,7 +115,44 @@
             background-size: cover;
             background-position: center;
         }
+/* Custom Cursor */
+* {
+    cursor: none !important;
+}
 
+.cursor-dot {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.8) 0%, rgba(102, 126, 234, 0.4) 40%, transparent 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    filter: blur(2px);
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor-dot.hover {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(240, 147, 251, 0.9) 0%, rgba(245, 87, 108, 0.4) 40%, transparent 70%);
+    filter: blur(3px);
+}
+
+.cursor-trail {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    filter: blur(8px);
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease-out;
+}
         /* Section Styles */
         section {
             padding: 100px 40px;
@@ -462,6 +499,9 @@
     </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-trail"></div>
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -1207,6 +1247,59 @@
         document.querySelectorAll('.stat-card').forEach(card => {
             statsObserver.observe(card);
         });
+        // Custom Cursor
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorTrail = document.querySelector('.cursor-trail');
+
+let mouseX = 0;
+let mouseY = 0;
+let trailX = 0;
+let trailY = 0;
+
+// Update cursor position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Immediate update for dot
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+});
+
+// Smooth trail animation
+function animateTrail() {
+    // Smooth following effect
+    trailX += (mouseX - trailX) * 0.2;
+    trailY += (mouseY - trailY) * 0.2;
+    
+    cursorTrail.style.left = trailX + 'px';
+    cursorTrail.style.top = trailY + 'px';
+    
+    requestAnimationFrame(animateTrail);
+}
+animateTrail();
+
+// Add hover effect on interactive elements
+document.querySelectorAll('a, button, .transaction-card, .award-card, .report-card').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursorDot.classList.add('hover');
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        cursorDot.classList.remove('hover');
+    });
+});
+
+// Hide cursor when it leaves the window
+document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+    cursorTrail.style.opacity = '0';
+});
+
+document.addEventListener('mouseenter', () => {
+    cursorDot.style.opacity = '1';
+    cursorTrail.style.opacity = '1';
+});
     </script>
 </body>
 </html>
