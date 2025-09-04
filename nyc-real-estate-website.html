@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - NYC Real Estate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 15px 40px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 200;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero .tagline {
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23000000" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px;
+            background: #fafafa;
+            border-radius: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 200;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        /* Transactions */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .filter-tab {
+            padding: 12px 30px;
+            background: none;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-tab.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+
+        .transactions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .transaction-card {
+            background: white;
+            border: 1px solid #eee;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .transaction-card:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .transaction-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transaction-type {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 15px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .transaction-details {
+            padding: 30px;
+        }
+
+        .transaction-address {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .transaction-info {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .transaction-price {
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 15px;
+        }
+
+        /* Awards */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .award-card {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .award-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+        }
+
+        .award-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .award-year {
+            color: #666;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* Weekly Reports */
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .report-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .report-header {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+        }
+
+        .report-date {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .report-title {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        .report-content {
+            padding: 30px;
+        }
+
+        .report-excerpt {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 10px;
+        }
+
+        /* Contact */
+        .contact {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .transactions-grid,
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Your Name</div>
+            <ul class="nav-links">
+                <li><a onclick="scrollToSection('transactions')">Transactions</a></li>
+                <li><a onclick="scrollToSection('awards')">Awards</a></li>
+                <li><a onclick="scrollToSection('reports')">Market Reports</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Your Name</h1>
+            <p class="tagline">Luxury Real Estate • Manhattan & Brooklyn</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats fade-in">
+        <div class="stat-card">
+            <div class="stat-number">$250M+</div>
+            <div class="stat-label">Total Sales Volume</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Transactions Closed</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+    </section>
+
+    <!-- Transactions Section -->
+    <section id="transactions" class="fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Recent Transactions</h2>
+            <p class="section-subtitle">Representing buyers, sellers, and renters across NYC</p>
+        </div>
+
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterTransactions('all')">All</button>
+            <button class="filter-tab" onclick="filterTransactions('buy')">Buy Side</button>
+            <button class="filter-tab" onclick="filterTransactions('sell')">Sell Side</button>
+            <button class="filter-tab" onclick="filterTransactions('rental')">Rentals</button>
+        </div>
+
+        <div class="transactions-grid" id="transactionsGrid">
+            <!-- Buy Side Transaction -->
+            <div class="transaction-card" data-type="buy">
+                <div class="transaction-image">
+                    <span class="transaction-type">Buy Side</span>
+                </div>
+                <div class="transaction-details">
+                    <div class="transaction-address">432 Park Avenue, PH-95</div>
+                    <div class="transaction-info">
+                        <span>4 BD | 5.5 BA</span>
+                        <span>8,055 SF</span>
+                    </div>
+                    <div class="transaction-info">
+                        <span>Closed: Oct 2024</span>
+                    </div>
+                    <div class="transaction-price">$32,500,000</div>
+                </div>
+            </div>
+
+            <!-- Sell Side Transaction -->
+            <div class="transaction-card" data-type="sell">
+                <div class="transaction-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <span class="transaction-type">Sell Side</span>
+                </div>
+                <div class="transaction-details">
+                    <div class="transaction-address">15 Central Park West, 19A</div>
+                    <div class="transaction-info">
+                        <span>3 BD | 3.5 BA</span>
+                        <span>3,163 SF</span>
+                    </div>
+                    <div class="transaction-info">
+                        <span>Closed: Sep 2024</span>
+                    </div>
+                    <div class="transaction-price">$18,750,000</div>
+                </div>
+            </div>
+
+            <!-- Rental Transaction -->
+            <div class="transaction-card" data-type="rental">
+                <div class="transaction-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <span class="transaction-type">Rental</span>
+                </div>
+                <div class="transaction-details">
+                    <div class="transaction-address">56 Leonard Street, 42B</div>
+                    <div class="transaction-info">
+                        <span>2 BD | 2.5 BA</span>
+                        <span>1,944 SF</span>
+                    </div>
+                    <div class="transaction-info">
+                        <span>Leased: Nov 2024</span>
+                    </div>
+                    <div class="transaction-price">$22,000/month</div>
+                </div>
+            </div>
+
+            <!-- Buy Side Transaction -->
+            <div class="transaction-card" data-type="buy">
+                <div class="transaction-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <span class="transaction-type">Buy Side</span>
+                </div>
+                <div class="transaction-details">
+                    <div class="transaction-address">One57, 67th Floor</div>
+                    <div class="transaction-info">
+                        <span>3 BD | 3.5 BA</span>
+                        <span>4,193 SF</span>
+                    </div>
+                    <div class="transaction-info">
+                        <span>Closed: Aug 2024</span>
+                    </div>
+                    <div class="transaction-price">$15,900,000</div>
+                </div>
+            </div>
+
+            <!-- Sell Side Transaction -->
+            <div class="transaction-card" data-type="sell">
+                <div class="transaction-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                    <span class="transaction-type">Sell Side</span>
+                </div>
+                <div class="transaction-details">
+                    <div class="transaction-address">70 Vestry Street, PH</div>
+                    <div class="transaction-info">
+                        <span>5 BD | 5.5 BA</span>
+                        <span>5,085 SF</span>
+                    </div>
+                    <div class="transaction-info">
+                        <span>Closed: Jul 2024</span>
+                    </div>
+                    <div class="transaction-price">$28,000,000</div>
+                </div>
+            </div>
+
+            <!-- Rental Transaction -->
+            <div class="transaction-card" data-type="rental">
+                <div class="transaction-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                    <span class="transaction-type">Rental</span>
+                </div>
+                <div class="transaction-details">
+                    <div class="transaction-address">30 Park Place, 76A</div>
+                    <div class="transaction-info">
+                        <span>3 BD | 3.5 BA</span>
+                        <span>3,238 SF</span>
+                    </div>
+                    <div class="transaction-info">
+                        <span>Leased: Oct 2024</span>
+                    </div>
+                    <div class="transaction-price">$35,000/month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <p class="section-subtitle">Excellence in New York Real Estate</p>
+        </div>
+
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">★</div>
+                <div class="award-title">Top Producer Award</div>
+                <div class="award-year">2024 • Douglas Elliman</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">◆</div>
+                <div class="award-title">Chairman's Circle</div>
+                <div class="award-year">2023-2024</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">▲</div>
+                <div class="award-title">Real Trends Top 250</div>
+                <div class="award-year">National Ranking 2024</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon">●</div>
+                <div class="award-title">NYC Power Broker</div>
+                <div class="award-year">Wall Street Journal 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Reports Section -->
+    <section id="reports" class="fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Market Reports</h2>
+            <p class="section-subtitle">Weekly insights on NYC real estate trends</p>
+        </div>
+
+        <div class="reports-grid">
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-date">December 15, 2024</div>
+                    <div class="report-title">Manhattan Luxury Market Sees Year-End Surge</div>
+                </div>
+                <div class="report-content">
+                    <p class="report-excerpt">
+                        An analysis of the latest trends in Manhattan's luxury real estate market, 
+                        including record-breaking sales in Tribeca and renewed interest in Upper East Side properties...
+                    </p>
+                    <a href="#" class="read-more">Read Full Report →</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-date">December 8, 2024</div>
+                    <div class="report-title">Brooklyn's Emerging Neighborhoods: Investment Opportunities</div>
+                </div>
+                <div class="report-content">
+                    <p class="report-excerpt">
+                        Exploring the rapid development in Brooklyn's waterfront communities and what it means 
+                        for investors looking to enter the market before the next price surge...
+                    </p>
+                    <a href="#" class="read-more">Read Full Report →</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-date">December 1, 2024</div>
+                    <div class="report-title">Interest Rates and NYC Real Estate: Q1 2025 Forecast</div>
+                </div>
+                <div class="report-content">
+                    <p class="report-excerpt">
+                        How recent Federal Reserve decisions are impacting buyer behavior and what 
+                        sellers need to know about pricing strategies in the current market...
+                    </p>
+                    <a href="#" class="read-more">Read Full Report →</a>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <div class="report-date">November 24, 2024</div>
+                    <div class="report-title">The New Development Boom: What's Coming in 2025</div>
+                </div>
+                <div class="report-content">
+                    <p class="report-excerpt">
+                        A comprehensive look at the major developments breaking ground in 2025, 
+                        from Hudson Yards expansion to the transformation of Long Island City...
+                    </p>
+                    <a href="#" class="read-more">Read Full Report →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="tel:212-555-0100">212.555.0100</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:your.name@realestate.com">your.name@realestate.com</a>
+            </div>
+            <div class="contact-item">
+                <a href="#">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Filter transactions
+        function filterTransactions(type) {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const cards = document.querySelectorAll('.transaction-card');
+            
+            // Update active tab
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.textContent.toLowerCase().includes(type) || 
+                    (type === 'all' && tab.textContent === 'All')) {
+                    tab.classList.add('active');
+                }
+            });
+
+            // Filter cards
+            cards.forEach(card => {
+                if (type === 'all') {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    if (card.dataset.type === type) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                }
+            });
+        }
+
+        // Add transition styles to transaction cards
+        document.querySelectorAll('.transaction-card').forEach(card => {
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some animation to stat numbers
+        const animateValue = (element, start, end, duration) => {
+            const startTimestamp = Date.now();
+            const step = () => {
+                const timestamp = Date.now();
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = element.dataset.prefix + value + element.dataset.suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+
+        // Animate stats when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (statNumber) {
+                        const text = statNumber.textContent;
+                        const match = text.match(/(\D*)(\d+)(\D*)/);
+                        if (match) {
+                            statNumber.dataset.prefix = match[1];
+                            statNumber.dataset.suffix = match[3];
+                            animateValue(statNumber, 0, parseInt(match[2]), 2000);
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+    </script>
+</body>
+</html>
