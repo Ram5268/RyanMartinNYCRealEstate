@@ -1246,46 +1246,59 @@
 
         document.querySelectorAll('.stat-card').forEach(card => {
             statsObserver.observe(card);
-       /* Custom Cursor */
-* {
-    cursor: none !important;
-}
+        // Custom Cursor
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorTrail = document.querySelector('.cursor-trail');
 
-.cursor-dot {
-    width: 24px;
-    height: 24px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 1) 0%, rgba(102, 126, 234, 0.7) 40%, rgba(102, 126, 234, 0.3) 70%);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    filter: blur(1px);
-    mix-blend-mode: normal;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background 0.2s;
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
-}
+let mouseX = 0;
+let mouseY = 0;
+let trailX = 0;
+let trailY = 0;
 
-.cursor-dot.hover {
-    width: 35px;
-    height: 35px;
-    background: radial-gradient(circle, rgba(240, 147, 251, 1) 0%, rgba(245, 87, 108, 0.8) 40%, rgba(240, 147, 251, 0.3) 70%);
-    filter: blur(1.5px);
-    box-shadow: 0 0 30px rgba(240, 147, 251, 0.7);
-}
+// Update cursor position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Immediate update for dot
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+});
 
-.cursor-trail {
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.4) 0%, rgba(102, 126, 234, 0.2) 30%, transparent 60%);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    filter: blur(5px);
-    transform: translate(-50%, -50%);
-    transition: all 0.1s ease-out;
+// Smooth trail animation
+function animateTrail() {
+    // Smooth following effect
+    trailX += (mouseX - trailX) * 0.2;
+    trailY += (mouseY - trailY) * 0.2;
+    
+    cursorTrail.style.left = trailX + 'px';
+    cursorTrail.style.top = trailY + 'px';
+    
+    requestAnimationFrame(animateTrail);
 }
+animateTrail();
+
+// Add hover effect on interactive elements
+document.querySelectorAll('a, button, .transaction-card, .award-card, .report-card').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursorDot.classList.add('hover');
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        cursorDot.classList.remove('hover');
+    });
+});
+
+// Hide cursor when it leaves the window
+document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+    cursorTrail.style.opacity = '0';
+});
+
+document.addEventListener('mouseenter', () => {
+    cursorDot.style.opacity = '1';
+    cursorTrail.style.opacity = '1';
+});
     </script>
 </body>
 </html>
