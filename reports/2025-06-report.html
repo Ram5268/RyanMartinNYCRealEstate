@@ -1,6 +1,420 @@
-June 2025 Market Report
-By June, financial markets were grappling with cross-currents. Globally, central banks struck a cautious tone. The European Central Bank, for instance, kept its key rate unchanged and noted that eurozone inflation had eased back to 2%, achieving its target (reuters.com). However, policymakers remained wary of trade disputes – U.S.–EU trade talks were ongoing, and the prospect of new tariffs (rumored 15% duties on European goods) threatened Europe’s growth outlook (reuters.com). In the U.S., oil prices ticked up amid Middle East tensions, adding some volatility. Overall, the international backdrop featured moderate growth and contained inflation, but with plenty of uncertainty due to geopolitical frictions.
-In the U.S., evidence of a mild economic slowdown mounted in June. The Labor Department’s May jobs report (released in early June) showed payroll growth downshifting: only 139,000 jobs were added in May, roughly half the pace of early spring (reuters.com). Revisions revealed that hiring in March and April was 95,000 jobs lower than previously estimated (reuters.com), and June’s report would later show the first monthly job losses in over four years. The unemployment rate stayed at 4.2%, but only because over 600,000 Americans left the labor force amid waning confidence in the job market (reuters.com). Surveys showed businesses growing more cautious on hiring, citing uncertainty from President Trump’s flip-flopping tariffs and spending policies (reuters.com). On the price front, inflation crept up yet remained near target. May’s CPI came in at +2.4% year-over-year (up slightly from April’s 2.3%) with core inflation at 2.8% (cbsnews.comcbsnews.com). Notably, this moderate inflation reading fell short of forecasts, suggesting that the first round of tariff increases had not fully filtered through to consumer prices (cbsnews.com). Fed Chair Jerome Powell remarked that, so far, tariffs had not “shown up” in the backward-looking data but warned they could boost inflation in coming months (cbsnews.com). Indeed, economists projected that the inflation rate would edge above 3% by year’s end once the tariff effects materialize (cbsnews.com).
-The Federal Reserve, therefore, held interest rates steady at its mid-June policy meeting, keeping the federal funds rate in the 4.25%–4.50% range (reuters.com). This marked the second consecutive meeting without a change. Importantly, the Fed’s updated projections still showed two rate cuts likely by the end of 2025, reflecting expectations that economic risks were rising (reuters.com). Fed officials emphasized a patient stance as they assessed “stagflation” concerns – inflation was trending a bit higher due to tariffs even as growth showed signs of cooling. Powell noted that the risks of higher inflation and higher unemployment had grown since the spring, creating a challenging outlook (cbsnews.com). In this context, the Fed signaled it would not hesitate to ease policy if downside risks materialize, but also that it wanted to wait for more data on the tariff impact before making any moves (cbsnews.com). Financial markets, which had hoped for an early rate cut, pulled back those expectations, pricing in policy easing only in the fall.
-New York City’s real estate market remained heated in June, though new dynamics emerged. Manhattan’s median rent hit $4,625 – yet another record high (the fourth time in five months) and 7.6% higher than June 2024 (brickunderground.com). Renters continued to face intense competition: about 1 in 4 Manhattan apartments rented in June saw bidding wars driving the lease above the asking rent (brickunderground.com). A notable development was the implementation of New York’s new FARE Act (Fairness in Apartment Rental Expenses) on June 11, which shifted broker fee responsibility from renters to landlords. Many landlords promptly raised rents on new leases to offset the broker fees (brickunderground.com). This regulatory change likely contributed to the month’s rent surge and could temporarily tighten inventory as market participants adjust. On the sales side, NYC’s housing prices stayed resilient – Manhattan co-op/condo median sale prices showed little change year-on-year, and buyer demand proved steady for well-priced homes (helped by slightly lower mortgage rates compared to 2024). NYC’s local economy gave mixed signals: the city’s unemployment rate ticked down to 4.7% by June (edc.nyc), and private-sector payrolls stood near record highs, yet job growth in the first half of 2025 was the slowest (ex-pandemic) since 2009 (pfnyc.org). In summary, June ended with a growing sense that the economy was at an inflection point. For real estate clients, the implication is twofold: mortgage rates remained elevated for now (with the Fed on hold), but relief could be on the horizon if economic softness prompts late-year rate cuts; and NYC’s rental market, while still historically expensive, may start to stabilize once the broker-fee law’s impact normalizes and as affordability pressures eventually curb further rent hikes. All eyes will be on incoming data, as the Fed’s next steps – and the trajectory of interest rates – hinge on whether tariff-driven inflation materializes and how much the labor market cools over the summer.
-(Sources: U.S. Bureau of Labor Statistics; Federal Reserve; CBS News; Reuters; NYC Economic Development Corp; Douglas Elliman Real Estate) cbsnews.comreuters.comreuters.combrickunderground.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>June 2025 Market Report - Ryan Martin NYC Real Estate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.8;
+        }
+
+        .report-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.6;
+        }
+
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+        }
+
+        .report-header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 40px;
+        }
+
+        .report-date {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .report-title {
+            font-size: 48px;
+            font-weight: 200;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .report-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .executive-summary {
+            background: #f8f8f8;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .executive-summary h2 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .key-points {
+            list-style: none;
+        }
+
+        .key-points li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .key-points li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .report-section {
+            margin-bottom: 60px;
+        }
+
+        .report-section h2 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .report-section h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .report-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: #fafafa;
+            padding: 30px;
+            text-align: center;
+            border-radius: 2px;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 200;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        .stat-change {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .stat-change.positive {
+            color: #22c55e;
+        }
+
+        .stat-change.negative {
+            color: #ef4444;
+        }
+
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .report-footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .footer-contact h3 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.6;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        @media (max-width: 768px) {
+            .report-title {
+                font-size: 32px;
+            }
+
+            .report-section h2 {
+                font-size: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="report-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Ryan Martin</a>
+            <a href="../index.html#reports" class="back-link">← Back to All Reports</a>
+        </div>
+    </nav>
+
+    <!-- Report Content -->
+    <div class="report-container">
+        <!-- Header -->
+        <div class="report-header">
+            <div class="report-date">June 1, 2025</div>
+            <h1 class="report-title">Manhattan Rents Hit Fourth Record High as Economy Shows Signs of Cooling</h1>
+            <p class="report-subtitle">FARE Act Implementation Adds New Dynamics to NYC Rental Market</p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <ul class="key-points">
+                <li>Manhattan median rent climbs to $4,625, fourth record in five months</li>
+                <li>FARE Act shifts broker fees to landlords, prompting rent increases</li>
+                <li>Job growth slows dramatically to 139,000, half the spring pace</li>
+                <li>Fed maintains rates at 4.25%-4.50% amid "stagflation" concerns</li>
+                <li>1 in 4 Manhattan apartments still seeing bidding wars above asking</li>
+                <li>Inflation edges up to 2.4% as tariff effects begin to emerge</li>
+            </ul>
+        </div>
+
+        <!-- Key Metrics -->
+        <section class="report-section">
+            <h2>Market Snapshot</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">$4,625</div>
+                    <div class="stat-label">Manhattan Median Rent</div>
+                    <div class="stat-change positive">↑ 7.6% YoY</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">139K</div>
+                    <div class="stat-label">Jobs Added (May)</div>
+                    <div class="stat-change negative">↓ 50% from Q1</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">4.7%</div>
+                    <div class="stat-label">NYC Unemployment</div>
+                    <div class="stat-change positive">↓ from 4.8%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">2.4%</div>
+                    <div class="stat-label">Inflation Rate</div>
+                    <div class="stat-change negative">↑ from 2.3%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FARE Act Highlight -->
+        <div class="highlight-box">
+            <h4>FARE Act Impact</h4>
+            <p>
+                The Fairness in Apartment Rental Expenses (FARE) Act took effect June 11, 2025, shifting broker fee responsibility from renters to landlords. Many landlords have responded by raising rents on new leases to offset these costs, contributing to June's record-high median rent.
+            </p>
+        </div>
+
+        <!-- Economic Context -->
+        <section class="report-section">
+            <h2>Economic Overview</h2>
+            
+            <h3>Labor Market Shows Clear Deceleration</h3>
+            <p>
+                Evidence of economic slowdown mounted in June as the Labor Department's May jobs report revealed payroll growth downshifting dramatically. Only 139,000 jobs were added in May, roughly half the pace of early spring. More concerning, revisions showed that hiring in March and April was 95,000 jobs lower than previously estimated.
+            </p>
+            
+            <p>
+                The unemployment rate held at 4.2%, but this stability masks underlying weakness—over 600,000 Americans left the labor force amid waning confidence. Businesses are growing increasingly cautious on hiring, citing uncertainty from trade policies and tariff volatility.
+            </p>
+
+            <h3>Federal Reserve Navigates "Stagflation" Concerns</h3>
+            <p>
+                The Federal Reserve maintained its wait-and-see approach, holding rates steady at 4.25%-4.50% for the second consecutive meeting. Fed Chair Jerome Powell acknowledged that tariffs have not yet "shown up" in backward-looking data but warned they could boost inflation in coming months.
+            </p>
+            
+            <p>
+                May's CPI came in at 2.4% year-over-year, up slightly from April's 2.3%, with core inflation at 2.8%. The Fed now faces the delicate challenge of balancing inflation risks from tariffs against clear signs of economic cooling—a classic "stagflation" scenario that complicates policy decisions.
+            </p>
+        </section>
+
+        <!-- NYC Market Analysis -->
+        <section class="report-section">
+            <h2>NYC Real Estate Analysis</h2>
+            
+            <h3>Rental Market Reaches New Heights</h3>
+            <p>
+                Manhattan's median rent hit $4,625 in June—yet another record high and the fourth time in five months. The year-over-year increase of 7.6% underscores the persistent strength of rental demand despite affordability challenges.
+            </p>
+            
+            <p>
+                Competition remains fierce with approximately 25% of Manhattan apartments renting above asking price through bidding wars. The implementation of the FARE Act on June 11 added a new dynamic, as landlords adjusted pricing strategies to account for broker fee obligations.
+            </p>
+
+            <h3>Local Economy Shows Mixed Signals</h3>
+            <p>
+                NYC's unemployment rate improved to 4.7%, and private-sector payrolls remain near record highs. However, job growth in the first half of 2025 has been the slowest (excluding the pandemic) since 2009, suggesting the city is not immune to national economic headwinds.
+            </p>
+            
+            <p>
+                The sales market continues to show resilience, with Manhattan co-op and condo median sale prices holding steady year-over-year. Buyer demand remains solid for well-priced homes, supported by mortgage rates that, while elevated, are slightly lower than 2024 peaks.
+            </p>
+        </section>
+
+        <!-- Looking Ahead -->
+        <section class="report-section">
+            <h2>Market Outlook</h2>
+            <p>
+                June ended with growing consensus that the economy has reached an inflection point. The Federal Reserve's updated projections still show two rate cuts likely by the end of 2025, reflecting mounting economic risks. Markets have pulled back expectations for an early rate cut, now pricing in policy easing only in the fall.
+            </p>
+            
+            <h3>Implications for NYC Real Estate</h3>
+            
+            <p><strong>For Renters:</strong> While mortgage rates remain elevated with the Fed on hold, relief could be on the horizon if economic softness prompts late-year rate cuts. The rental market, while historically expensive, may begin to stabilize once the broker-fee law's impact normalizes.</p>
+            
+            <p><strong>For Buyers:</strong> The prospect of future rate cuts should provide some optimism, though timing remains uncertain. Well-priced properties continue to attract solid demand.</p>
+            
+            <p><strong>Key Factors to Watch:</strong></p>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Whether tariff-driven inflation materializes as expected</li>
+                <li>The pace of labor market cooling through summer</li>
+                <li>Fed policy decisions at upcoming meetings</li>
+                <li>Adjustment period for FARE Act implementation</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <div class="report-footer">
+            <div class="footer-contact">
+                <h3>For Personalized Market Insights</h3>
+                <div class="contact-info">
+                    <a href="tel:212-555-0100">212.555.0100</a>
+                    <a href="mailto:your.name@realestate.com">your.name@realestate.com</a>
+                    <a href="../index.html">RyanMartinNYC.com</a>
+                </div>
+            </div>
+            <p class="disclaimer">
+                Sources: U.S. Bureau of Labor Statistics, Federal Reserve, CBS News, Reuters, NYC Economic Development Corp, Douglas Elliman Real Estate, Brick Underground. 
+                This report is based on data available as of June 2025. Market conditions are subject to change. 
+                All information is deemed reliable but not guaranteed.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
