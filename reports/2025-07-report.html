@@ -1,6 +1,432 @@
-July 2025 Market Report
-The global economic picture in July featured a mix of robust and artificial growth signals. Notably, the U.S. reported a surprising rebound in GDP: after shrinking at a –0.5% annual rate in Q1, the economy expanded by +3.3% (annualized) in Q2 2025 (cbsnews.com). This sharp snap-back in growth was largely a statistical mirage, driven by trade fluctuations. In Q1, many businesses front-loaded imports before tariffs hit, and that import surge dragged GDP down; in Q2, imports plunged nearly 30%, boosting growth by over 5 percentage points (cbsnews.com). Aside from trade distortions and an ongoing investment boom in AI, underlying demand remained tepid – the economy grew only ~1.4% on average in the first half (cbsnews.com). Europe’s economy, meanwhile, continued on a modest 1% growth path. With eurozone inflation back near 2%, the European Central Bank held its deposit rate at 2.0% in late July (reuters.com), after a year of easing. ECB officials took a data-dependent stance, noting that domestic price pressures were easing (wage growth had slowed) (reuters.com). Investors still bet on at least one more ECB rate cut by year-end, given that Trump’s trade war was weighing on European growth and threatening a new 15% tariff regime (reuters.com). In sum, global conditions in July showed contained inflation and central banks on hold, but with plenty of uncertainty under the surface of strong-looking headline GDP numbers.
-In the United States, the inflation tide began to turn upwards due to import tariffs. Consumer prices in June (reported mid-July) rose 2.7% year-over-year, a noticeable pickup from May’s 2.4% pace (reuters.com). This marked the fastest inflation since January and confirmed that tariff pass-through was starting – prices for various goods (e.g. groceries, appliances, apparel) moved higher as businesses began to factor in the cost of Trump’s new import duties (reuters.comreuters.com). Core CPI reached +2.9% year-on-year (reuters.com). Notably, June’s price index was pushed up partly by a 1.0% rebound in gasoline (after months of declines), exacerbated by a mid-year jump in oil prices tied to Middle East unrest (reuters.cominvestopedia.com). Despite this inflation uptick, Federal Reserve officials expressed confidence that the tariff-driven price increases would be “meaningful but not persistent.” In minutes from its late-June meeting (released in July), the Fed indicated it expects inflation to run above target in coming months before fading in 2026, assuming the tariff shock is one-off (reuters.comreuters.com).
-Labor market data signaled further cooling. The June jobs report (out in early July) showed only 73,000 jobs added (after revisions) – far below trend and evidence that hiring had almost stalled (cbsnews.com). The unemployment rate remained around 4.2%–4.3%, but more workers were on the sidelines and job openings had begun to decline. With economic momentum appearing to slow, markets increasingly anticipated that the Federal Reserve would cut rates at its next meeting. Indeed, by late July it was a near-consensus on Wall Street that the Fed’s first rate reduction of the year would occur in September (cbsnews.com). For its part, the Fed stayed on hold at the July 29–30 FOMC meeting, keeping the benchmark rate at 4.25%–4.50%. However, the internal debate intensified: “a couple” of Fed officials favored cutting rates as soon as July – a minority view – while the majority opted to wait for more evidence of a downturn (reuters.com). Fed Chair Jerome Powell, in his late-July press conference, struck a cautious tone, emphasizing that while inflation had ticked up, softening labor market trends and “fragile” business confidence warranted vigilance. In essence, the Fed pivoted from a hiking bias earlier in the year to a clear easing bias by July. The stage was set for potential rate cuts in the fall if the economy continued to lose steam.
-New York City’s real estate market experienced record highs – and early hints of a cooldown. In Manhattan, rents peaked yet again: July’s median rent hit $4,700, the fifth record high in six months and up 9.3% year-over-year (brickunderground.com). The rental market’s intensity was unprecedented – nearly 29% of new Manhattan leases involved bidding wars in July, a record share since tracking began in 2021 (brickunderground.com). Many renters were offering above asking rent to secure apartments, driving summer rents higher earlier than usual. Nevertheless, inventory was gradually improving (Manhattan listings were ~10% higher than a year ago), and landlords started to show signs of pricing cautiously heading into late summer. The buy side of NYC’s market showed glimmers of strength thanks to the changing interest rate climate. Mortgage rates, while still high, dipped slightly on expectations of Fed cuts. This led to a jump in purchase activity: Manhattan home sales contracts in late July reached their highest level in nearly two years, as some would-be renters turned to buying, sensing a window before borrowing costs potentially fall further (credaily.combrickunderground.com). Overall, NYC’s economy in July remained on solid footing – tourism was bustling and Wall Street profits were up – but the city is not immune to national trends. Private-sector hiring in NYC slowed to a crawl (fewer than 1,000 net new jobs in the first half, per city data), aligning with the national cooldown (pfnyc.org). Forecast: By late summer, the pieces were in place for a shift in the market. The Fed’s likely rate cuts could lower mortgage rates, providing relief to buyers and refinancers. In turn, some downward pressure on rents may emerge if more renters become homeowners. For now, NYC clients should be prepared for one more month of very high rents in August, but with a reasonable expectation that relief – in the form of both lower interest rates and a plateauing of rent levels – is on the horizon as economic gravity finally sets in.
-(Sources: U.S. Commerce Department (BEA); Bureau of Labor Statistics; Reuters; ECB; CBS News; Douglas Elliman via Bloomberg and Brick Underground) (reuters.comcbsnews.combrickunderground.combrickunderground.com)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>July 2025 Market Report - Ryan Martin NYC Real Estate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.8;
+        }
+
+        .report-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.6;
+        }
+
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+        }
+
+        .report-header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 40px;
+        }
+
+        .report-date {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .report-title {
+            font-size: 48px;
+            font-weight: 200;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .report-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .executive-summary {
+            background: #f8f8f8;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .executive-summary h2 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .key-points {
+            list-style: none;
+        }
+
+        .key-points li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .key-points li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .report-section {
+            margin-bottom: 60px;
+        }
+
+        .report-section h2 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .report-section h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .report-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: #fafafa;
+            padding: 30px;
+            text-align: center;
+            border-radius: 2px;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 200;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        .stat-change {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .stat-change.positive {
+            color: #22c55e;
+        }
+
+        .stat-change.negative {
+            color: #ef4444;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .warning-box h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #c62828;
+        }
+
+        .report-footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .footer-contact h3 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.6;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        @media (max-width: 768px) {
+            .report-title {
+                font-size: 32px;
+            }
+
+            .report-section h2 {
+                font-size: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="report-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Ryan Martin</a>
+            <a href="../index.html#reports" class="back-link">← Back to All Reports</a>
+        </div>
+    </nav>
+
+    <!-- Report Content -->
+    <div class="report-container">
+        <!-- Header -->
+        <div class="report-header">
+            <div class="report-date">July 1, 2025</div>
+            <h1 class="report-title">Manhattan Rents Peak at $4,700 as Fed Signals Fall Rate Cuts</h1>
+            <p class="report-subtitle">Record 29% of Leases Involve Bidding Wars Amid Tariff-Driven Inflation</p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <ul class="key-points">
+                <li>Manhattan median rent hits unprecedented $4,700, fifth record in six months</li>
+                <li>Nearly 29% of Manhattan leases involve bidding wars—highest ever recorded</li>
+                <li>GDP rebounds to +3.3% in Q2, but growth largely artificial from trade distortions</li>
+                <li>Inflation rises to 2.7% as tariff effects begin filtering through to consumers</li>
+                <li>June jobs report shows only 73,000 jobs added, hiring nearly stalled</li>
+                <li>Fed maintains rates but pivots to clear easing bias for fall</li>
+                <li>Manhattan home sales contracts reach two-year high on rate cut expectations</li>
+            </ul>
+        </div>
+
+        <!-- Key Metrics -->
+        <section class="report-section">
+            <h2>Market Snapshot</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">$4,700</div>
+                    <div class="stat-label">Manhattan Median Rent</div>
+                    <div class="stat-change positive">↑ 9.3% YoY</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">29%</div>
+                    <div class="stat-label">Above-Ask Leases</div>
+                    <div class="stat-change negative">Record High</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">2.7%</div>
+                    <div class="stat-label">Inflation Rate</div>
+                    <div class="stat-change negative">↑ from 2.4%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">73K</div>
+                    <div class="stat-label">Jobs Added (June)</div>
+                    <div class="stat-change negative">Near Stall Speed</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <h4>Rental Market at Peak Intensity</h4>
+            <p>
+                The 29% share of Manhattan leases involving bidding wars represents the highest level since tracking began in 2021. Many renters are offering above asking rent to secure apartments, driving summer rents higher earlier than usual.
+            </p>
+        </div>
+
+        <!-- Economic Context -->
+        <section class="report-section">
+            <h2>Economic Overview</h2>
+            
+            <h3>GDP Rebound Masks Underlying Weakness</h3>
+            <p>
+                The U.S. economy reported a surprising rebound with Q2 GDP expanding at a +3.3% annualized rate, after shrinking -0.5% in Q1. However, this sharp snap-back was largely a statistical mirage driven by trade fluctuations. Imports plunged nearly 30% in Q2 after businesses front-loaded purchases before tariffs hit, artificially boosting growth by over 5 percentage points.
+            </p>
+            
+            <p>
+                Stripping away trade distortions and AI investment boom effects, underlying demand remained tepid with the economy growing only ~1.4% on average in the first half of 2025. This weak foundation suggests the headline GDP number significantly overstates economic health.
+            </p>
+
+            <h3>Inflation Turns Higher on Tariff Impact</h3>
+            <p>
+                Consumer prices in June rose 2.7% year-over-year, marking the fastest inflation since January and confirming that tariff pass-through has begun. Prices for groceries, appliances, and apparel moved higher as businesses factored in the cost of new import duties. Core CPI reached 2.9% year-over-year, while gasoline prices rebounded 1.0% amid Middle East tensions.
+            </p>
+            
+            <p>
+                Despite this uptick, Federal Reserve officials expressed confidence that tariff-driven price increases would be "meaningful but not persistent," expecting inflation to run above target in coming months before fading in 2026.
+            </p>
+
+            <h3>Labor Market Reaches Critical Juncture</h3>
+            <p>
+                The June jobs report revealed only 73,000 jobs added after revisions—far below trend and evidence that hiring has almost stalled. While the unemployment rate remained around 4.2%-4.3%, more workers moved to the sidelines and job openings began declining. This dramatic cooling cemented Wall Street consensus that the Fed's first rate cut would occur in September.
+            </p>
+        </section>
+
+        <!-- NYC Market Analysis -->
+        <section class="report-section">
+            <h2>NYC Real Estate Analysis</h2>
+            
+            <h3>Rental Market Reaches Unprecedented Heights</h3>
+            <p>
+                July's median Manhattan rent of $4,700 marks the fifth record high in six months and represents a 9.3% year-over-year increase. The rental market's intensity is without precedent—nearly 29% of new Manhattan leases involved bidding wars, the highest share since tracking began.
+            </p>
+            
+            <p>
+                Despite these peaks, early signs of change are emerging. Manhattan listings are approximately 10% higher than a year ago, and landlords are beginning to price more cautiously heading into late summer. The gradual inventory improvement suggests the market may be approaching a turning point.
+            </p>
+
+            <h3>Sales Market Shows Renewed Life</h3>
+            <p>
+                The buy side of NYC's market displayed glimmers of strength thanks to changing interest rate expectations. Manhattan home sales contracts in late July reached their highest level in nearly two years, as some would-be renters pivoted to buying, sensing an opportunity before borrowing costs potentially fall further.
+            </p>
+            
+            <p>
+                Mortgage rates, while still elevated, dipped slightly on expectations of Fed cuts. This modest improvement was enough to unlock pent-up buyer demand, particularly among those exhausted by the rental market's competitive dynamics.
+            </p>
+
+            <h3>Local Economy Shows Mixed Signals</h3>
+            <p>
+                NYC's economy remained on solid footing with bustling tourism and strong Wall Street profits. However, the city is not immune to national trends—private-sector hiring slowed to a crawl with fewer than 1,000 net new jobs in the first half, aligning with the national cooldown.
+            </p>
+        </section>
+
+        <!-- Looking Ahead -->
+        <section class="report-section">
+            <h2>Market Outlook</h2>
+            <p>
+                By late summer, the pieces are in place for a significant market shift. The Federal Reserve has pivoted from a hiking bias earlier in the year to a clear easing bias by July, with the Fed Chair emphasizing that softening labor market trends and "fragile" business confidence warrant vigilance.
+            </p>
+            
+            <h3>What This Means for NYC Real Estate</h3>
+            
+            <p><strong>For Renters:</strong> Expect one more month of very high rents in August, but relief is on the horizon. The combination of increasing inventory, Fed rate cuts, and some demand shifting to purchases should begin moderating rent growth.</p>
+            
+            <p><strong>For Buyers:</strong> The window of opportunity is opening. With Fed rate cuts likely beginning in September, mortgage rates should decline, improving affordability for the first time in years.</p>
+            
+            <p><strong>Market Dynamics to Watch:</strong></p>
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Fed's September meeting likely to deliver first rate cut</li>
+                <li>Rental inventory continuing to improve from tight levels</li>
+                <li>Buyer activity increasing as mortgage rates anticipate Fed easing</li>
+                <li>Economic data confirming or contradicting recession risks</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <div class="report-footer">
+            <div class="footer-contact">
+                <h3>For Personalized Market Insights</h3>
+                <div class="contact-info">
+                    <a href="tel:212-555-0100">212.555.0100</a>
+                    <a href="mailto:your.name@realestate.com">your.name@realestate.com</a>
+                    <a href="../index.html">RyanMartinNYC.com</a>
+                </div>
+            </div>
+            <p class="disclaimer">
+                Sources: U.S. Commerce Department (BEA), Bureau of Labor Statistics, Reuters, ECB, CBS News, Douglas Elliman, Brick Underground, CRE Daily. 
+                This report is based on data available as of July 2025. Market conditions are subject to change. 
+                All information is deemed reliable but not guaranteed.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
