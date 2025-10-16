@@ -1,5 +1,387 @@
-May 2025 Market Report
-Globally, economic activity showed resilience amid trade tensions. China’s economy grew by 5.4% year-on-year in Q1 2025 (reuters.com), although uncertainty loomed from an escalating U.S.–China tariff battle. In Europe, inflation hovered near target levels (~2%), allowing the European Central Bank to hold steady. The broad backdrop was one of cautious optimism, with major economies growing moderately despite geopolitical headwinds.
-In the United States, the Federal Reserve maintained its benchmark interest rate at 4.25%–4.50% in early May, pausing after its last cut in December (cbsnews.com). Fed officials cited rising economic uncertainty from President Trump’s trade policies, which threatened to spur higher inflation and unemployment, as a key reason for adopting a “wait-and-see” stance (cbsnews.com). Notably, inflation had decelerated – the April Consumer Price Index rose just 2.3% year-over-year, the lowest since February 2021 (cbsnews.comcbsnews.com) and only +0.2% month-on-month. Core price growth remained slightly elevated (housing costs were a major driver), but overall price pressures were finally approaching the Federal Reserve’s 2% goal. The labor market, meanwhile, remained solid in April: employers added 177,000 jobs, and unemployment held at a low 4.2% (apnews.com). However, signs of strain emerged – consumer confidence slid for a fifth straight month to its weakest level since the pandemic’s onset (apnews.com). Economists attributed the dip in sentiment to trade-war uncertainty and hinted that the jobs “resilience” might soften in coming months.
-New York City’s economy and real estate market stayed robust in May. NYC’s unemployment rate edged down to 4.8% (continuing a multi-month improvement) amid steady private-sector hiring. Demand for housing remained intense. Manhattan’s median apartment rent hit $4,571 – a record high and about 7.6% higher than a year earlier (ny1.com). It was the third time in four months that Manhattan rents set a new peak, underscoring persistent demand despite rising costs. Renters often faced bidding wars, with nearly 25% of new leases being signed above the asking price in May (ny1.com). Landlord concessions (like free rent) dwindled to scant levels. On the sales side, Manhattan home prices held firm – the median asking price (≈$1.1 million) was up modestly (~2–3% year-on-year), indicating no significant price declines in NYC’s housing market (zillow.com). Looking ahead, the combination of cooling inflation and trade-related risks suggests the Fed will remain on hold into the summer, a backdrop of stable rates that should keep credit conditions steady. Nonetheless, tariff uncertainty is a wild card. The Fed has signaled it has “flexibility to cut or hike” as needed (cbsnews.com). For now, NYC real estate clients can expect a competitive market to continue into early summer, with record rents and tight inventory, while keeping an eye on broader economic trends that could alter the second-half outlook.
-(Sources: Federal Reserve; U.S. Bureau of Labor Statistics; Reuters; AP News; CBS News; Miller Samuel/Douglas Elliman via NY1 and Zillow) (cbsnews.comcbsnews.comapnews.comny1.com)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May 2025 Market Report - Ryan Martin NYC Real Estate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.8;
+        }
+
+        .report-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.6;
+        }
+
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+        }
+
+        .report-header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 40px;
+        }
+
+        .report-date {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .report-title {
+            font-size: 48px;
+            font-weight: 200;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .report-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .executive-summary {
+            background: #f8f8f8;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .executive-summary h2 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .key-points {
+            list-style: none;
+        }
+
+        .key-points li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .key-points li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .report-section {
+            margin-bottom: 60px;
+        }
+
+        .report-section h2 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .report-section h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .report-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: #fafafa;
+            padding: 30px;
+            text-align: center;
+            border-radius: 2px;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 200;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+        }
+
+        .stat-change {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .stat-change.positive {
+            color: #22c55e;
+        }
+
+        .stat-change.negative {
+            color: #ef4444;
+        }
+
+        .report-footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .footer-contact h3 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.6;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        @media (max-width: 768px) {
+            .report-title {
+                font-size: 32px;
+            }
+
+            .report-section h2 {
+                font-size: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="report-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Ryan Martin</a>
+            <a href="../index.html#reports" class="back-link">← Back to All Reports</a>
+        </div>
+    </nav>
+
+    <!-- Report Content -->
+    <div class="report-container">
+        <!-- Header -->
+        <div class="report-header">
+            <div class="report-date">May 1, 2025</div>
+            <h1 class="report-title">NYC Real Estate Market Shows Resilience Amid Fed Pause</h1>
+            <p class="report-subtitle">Manhattan Rents Hit Record High as Fed Maintains Rates</p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <ul class="key-points">
+                <li>Federal Reserve holds rates at 4.25%-4.50%, citing trade policy uncertainty</li>
+                <li>Manhattan median rent reaches record $4,571, up 7.6% year-over-year</li>
+                <li>NYC unemployment improves to 4.8%, continuing multi-month trend</li>
+                <li>Inflation cools to 2.3% annually, lowest since February 2021</li>
+                <li>Nearly 25% of new leases signed above asking price amid bidding wars</li>
+            </ul>
+        </div>
+
+        <!-- Key Metrics -->
+        <section class="report-section">
+            <h2>Market Snapshot</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">$4,571</div>
+                    <div class="stat-label">Manhattan Median Rent</div>
+                    <div class="stat-change positive">↑ 7.6% YoY</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">4.8%</div>
+                    <div class="stat-label">NYC Unemployment</div>
+                    <div class="stat-change positive">↓ from 5.1%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">2.3%</div>
+                    <div class="stat-label">Inflation Rate</div>
+                    <div class="stat-change positive">Lowest in 4 years</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">25%</div>
+                    <div class="stat-label">Above-Ask Leases</div>
+                    <div class="stat-change negative">Bidding wars</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Economic Context -->
+        <section class="report-section">
+            <h2>Economic Overview</h2>
+            
+            <h3>Federal Reserve Policy</h3>
+            <p>
+                The Federal Reserve maintained its benchmark interest rate at 4.25%-4.50% in early May, adopting a "wait-and-see" stance amid rising economic uncertainty from trade policies. Fed officials cited concerns that tariff battles could spur higher inflation and unemployment, making them cautious about further policy moves.
+            </p>
+
+            <h3>Inflation & Employment</h3>
+            <p>
+                Inflation has decelerated significantly, with the April Consumer Price Index rising just 2.3% year-over-year—the lowest since February 2021. The monthly increase was a modest 0.2%. While core price growth remains slightly elevated due to housing costs, overall price pressures are finally approaching the Federal Reserve's 2% goal.
+            </p>
+            
+            <p>
+                The labor market remains solid with employers adding 177,000 jobs in April and unemployment holding at a low 4.2% nationally. However, consumer confidence has slid for a fifth straight month to its weakest level since the pandemic's onset, suggesting potential softening ahead.
+            </p>
+        </section>
+
+        <!-- NYC Market Analysis -->
+        <section class="report-section">
+            <h2>NYC Real Estate Analysis</h2>
+            
+            <h3>Rental Market Dynamics</h3>
+            <p>
+                Manhattan's rental market reached unprecedented heights in May, with the median apartment rent hitting $4,571—a record high and approximately 7.6% higher than a year earlier. This marks the third time in four months that Manhattan rents have set a new peak, underscoring persistent demand despite rising costs.
+            </p>
+            
+            <p>
+                Competition for apartments remains fierce, with nearly 25% of new leases being signed above the asking price. Landlord concessions have virtually disappeared, reaching the lowest levels in years. The combination of strong employment in NYC and limited inventory continues to drive the rental market's strength.
+            </p>
+
+            <h3>Sales Market Update</h3>
+            <p>
+                The sales market shows resilience with Manhattan home prices holding firm. The median asking price of approximately $1.1 million represents a modest 2-3% year-over-year increase, indicating stability rather than significant price declines. Buyer demand remains steady for appropriately priced properties.
+            </p>
+        </section>
+
+        <!-- Looking Ahead -->
+        <section class="report-section">
+            <h2>Market Outlook</h2>
+            <p>
+                The combination of cooling inflation and trade-related risks suggests the Fed will remain on hold through the summer, maintaining stable credit conditions. However, tariff uncertainty remains a significant wild card, with the Fed signaling flexibility to adjust policy as needed.
+            </p>
+            
+            <p>
+                For NYC real estate, we expect the competitive market to continue into early summer, characterized by:
+            </p>
+            
+            <ul style="line-height: 2; margin-left: 20px;">
+                <li>Continued record rents with tight inventory in prime Manhattan neighborhoods</li>
+                <li>Strong rental demand driven by NYC's improving employment situation</li>
+                <li>Stable sales prices with motivated buyers for well-priced properties</li>
+                <li>Potential market shifts if Fed policy changes in response to economic data</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <div class="report-footer">
+            <div class="footer-contact">
+                <h3>For Personalized Market Insights</h3>
+                <div class="contact-info">
+                    <a href="tel:212-555-0100">212.555.0100</a>
+                    <a href="mailto:your.name@realestate.com">your.name@realestate.com</a>
+                    <a href="../index.html">RyanMartinNYC.com</a>
+                </div>
+            </div>
+            <p class="disclaimer">
+                Sources: Federal Reserve, U.S. Bureau of Labor Statistics, Reuters, AP News, CBS News, Miller Samuel/Douglas Elliman, NY1, Zillow. 
+                This report is based on data available as of May 2025. Market conditions are subject to change. 
+                All information is deemed reliable but not guaranteed.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
